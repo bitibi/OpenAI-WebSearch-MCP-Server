@@ -1,0 +1,44 @@
+{
+  "name": "openai-websearch-mcp-server",
+  "version": "1.0.0",
+  "description": "OpenAI Web Search MCP Server",
+  "type": "module",
+  "bin": {
+    "openai-websearch-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && shx chmod +x dist/*.js",
+    "prepare": "npm run build",
+    "watch": "tsc --watch"
+  },
+  "keywords": [
+    "openai",
+    "websearch",
+    "mcp",
+    "server"
+  ],
+  "author": "Tibor Bicskei",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.7.0",
+    "@types/dotenv": "^6.1.1",
+    "diff": "^5.1.0",
+    "dotenv": "^16.4.7",
+    "glob": "^10.3.10",
+    "minimatch": "^10.0.1",
+    "openai": "^4.87.3",
+    "zod": "^3.24.2",
+    "zod-to-json-schema": "^3.23.5"
+  },
+  "devDependencies": {
+    "@types/diff": "^5.0.9",
+    "@types/minimatch": "^5.1.2",
+    "@types/node": "^22",
+    "shx": "^0.3.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
