@@ -1,76 +1,67 @@
-# OpenAI-WebSearch-MCP-Server
+# OpenAI Web Search MCP Server
 
-A server for handling OpenAI web search using MCP (Multi-Config Protocol)
+A TypeScript implementation of an MCP server that provides web search functionality using OpenAI's web search preview feature.
 
-## Overview
+## Installation
 
-This project provides a server-side implementation for handling web search capabilities in OpenAI-powered applications using the Multi-Config Protocol (MCP). It serves as a middleware between OpenAI's services and your applications, enabling advanced web search functionality.
+You can run this package directly using npx:
 
-## Features
+```bash
+npx openai-websearch-mcp-server
+```
 
-- Real-time web search integration with OpenAI models
-- MCP (Multi-Config Protocol) implementation
-- Configurable search parameters
-- Response caching for improved performance
-- Rate limiting and quota management
-- Detailed logging and monitoring
+Or install it globally:
 
-## Getting Started
+```bash
+npm install -g openai-websearch-mcp-server
+```
 
-### Prerequisites
+## Usage
 
-- Node.js (v16 or higher)
-- npm or yarn
-- OpenAI API key
+1. Set your OpenAI API key as an environment variable:
 
-### Installation
+```bash
+export OPENAI_API_KEY='your-api-key-here'
+```
 
-1. Clone this repository:
-   ```
-   git clone https://github.com/bitibi/OpenAI-WebSearch-MCP-Server.git
-   cd OpenAI-WebSearch-MCP-Server
-   ```
+2. Run the server:
 
+```bash
+openai-websearch-mcp
+```
+
+By default, the server runs on port 3000. You can change this by setting the PORT environment variable:
+
+```bash
+PORT=8080 openai-websearch-mcp
+```
+
+## API
+
+The server provides a web search tool that can be used through the MCP protocol. The tool is named `web_search` and accepts a query string as input.
+
+## Development
+
+To set up the development environment:
+
+1. Clone the repository
 2. Install dependencies:
-   ```
+   ```bash
    npm install
    ```
-
-3. Create a `.env` file with your configuration:
-   ```
-   OPENAI_API_KEY=your_api_key_here
-   PORT=3000
-   CACHE_DURATION=3600
+3. Start the development server:
+   ```bash
+   npm run dev
    ```
 
-4. Start the server:
-   ```
-   npm start
-   ```
+## Building
 
-## Configuration
+To build the package:
 
-The server can be configured using environment variables or a config file. See [Configuration Guide](docs/configuration.md) for more details.
-
-## API Documentation
-
-### Endpoints
-
-- `POST /search`: Perform a web search
-- `GET /status`: Check server status
-- `GET /metrics`: Get performance metrics
-
-For complete API documentation, see [API Reference](docs/api.md).
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+```bash
+npm run build
+```
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- OpenAI for providing the foundational models
-- Contributors to the MCP specification
+MIT 
