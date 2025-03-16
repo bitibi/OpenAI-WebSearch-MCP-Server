@@ -1,6 +1,6 @@
 # OpenAI Web Search MCP Server
 
-A TypeScript implementation of an MCP server that provides web search functionality using OpenAI's web search preview feature.
+A TypeScript implementation of an MCP server that provides web search functionality using OpenAI's web search preview feature. This server utilizes OpenAI's latest Responses API with the `web_search_preview` capability, allowing AI models to perform real-time web searches through the OpenAI API.
 
 ## Installation
 
@@ -16,7 +16,34 @@ Or install it globally:
 npm install -g openai-websearch-mcp-server
 ```
 
-## Usage
+## Usage with MCP Clients
+
+This server is designed to be used with MCP (Model Context Protocol) clients. Here's how to set it up with different clients:
+
+### Claude Desktop
+
+Add the following configuration to your Claude Desktop settings:
+
+```json
+{
+  "mcpServers": {
+    "openai_websearch": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "openai-websearch-mcp-server"
+      ],
+      "env": {
+        "OPENAI_API_KEY": "your_api_key"
+      }
+    }
+  }
+}
+```
+
+Replace `your_api_key` with your actual OpenAI API key.
+
+## Environment Setup
 
 1. Set your OpenAI API key as an environment variable:
 
@@ -38,7 +65,7 @@ PORT=8080 openai-websearch-mcp
 
 ## API
 
-The server provides a web search tool that can be used through the MCP protocol. The tool is named `web_search` and accepts a query string as input.
+The server provides a web search tool that can be used through the MCP protocol. The tool is named `web_search` and accepts a query string as input. Under the hood, it uses OpenAI's Responses API with the `web_search_preview` feature to perform real-time web searches, providing up-to-date information from across the internet.
 
 ## Development
 
